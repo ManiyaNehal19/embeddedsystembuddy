@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 
 const Input = ({
   onSend,
@@ -9,6 +9,7 @@ const Input = ({
   isLoading: boolean;
 }) => {
   const [userInput, setUserInput] = React.useState("");
+  
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -17,7 +18,6 @@ const Input = ({
     onSend(userInput); 
     setUserInput("");
   };
-
   return (
     <form
       onSubmit={handleSubmit}
