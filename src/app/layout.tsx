@@ -35,27 +35,37 @@ export default function RootLayout({
     <ClerkProvider>
       <html lang="en">
         <body className={`${geistSans.variable} ${geistMono.variable} antialiased h-screen`}>
-          <nav className=' bg-gray-800 w-full p-3 h-1/12 flex gap-4 items-center'>
-              <Cpu size={35} color="#10b981" />
-              <div className='flex flex-col text-white'>
-                <h4 className='font-semibold text-lg'>Embedded Systems Buddy</h4>
-                <p className='text-sm text-gray-400'>IoT and Microcontroller Assistant</p>
-              </div>
-          </nav>
-          
-          {/* <header className="flex justify-end items-center p-4 gap-4 h-16">
-            <SignedOut>
-              <SignInButton />
-              <SignUpButton>
-                <button className="bg-[#6c47ff] text-white rounded-full font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 cursor-pointer">
-                  Sign Up
-                </button>
-              </SignUpButton>
-            </SignedOut>
-            <SignedIn>
-              <UserButton />
-            </SignedIn>
-          </header> */}
+         <nav className="bg-gray-800 w-full p-3 h-1/12 flex justify-between items-center">
+  
+  <div className="flex items-center gap-4">
+    <Cpu size={35} color="#10b981" />
+    <div className="flex flex-col text-white">
+      <h4 className="font-semibold text-lg">Embedded Systems Buddy</h4>
+      <p className="text-sm text-gray-400">IoT and Microcontroller Assistant</p>
+    </div>
+  </div>
+
+  <div className="flex items-center gap-2">
+    <SignedOut>
+      <SignInButton>
+        <button className="bg-gray-700 hover:bg-gray-600 text-white rounded-full font-medium text-sm h-10 px-4">
+          Sign In
+        </button>
+      </SignInButton>
+
+      <SignUpButton>
+        <button className="bg-[#6c47ff] hover:bg-[#805bff] text-white rounded-full font-medium text-sm h-10 px-4">
+          Sign Up
+        </button>
+      </SignUpButton>
+    </SignedOut>
+
+    <SignedIn>
+      <UserButton /> 
+    </SignedIn>
+  </div>
+</nav>
+
           {children}
         </body>
       </html>
