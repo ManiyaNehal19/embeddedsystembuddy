@@ -9,9 +9,20 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@clerk/nextjs": "^6.36.10",
+    "@clerk/themes": "^2.4.50",
+    "@langchain/openai": "^1.2.3",
+    "axios": "^1.13.3",
+    "langchain": "^1.2.14",
+    "lucide-react": "^0.563.0",
+    "mongodb": "^6.21.0",
+    "mongoose": "^8.21.1",
     "next": "16.1.4",
     "react": "19.2.3",
-    "react-dom": "19.2.3"
+    "react-dom": "19.2.3",
+    "react-markdown": "^10.1.0",
+    "react-syntax-highlighter": "^16.1.0",
+    "remark-gfm": "^4.0.1"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
