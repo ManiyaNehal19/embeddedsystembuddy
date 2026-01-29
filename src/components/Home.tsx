@@ -4,8 +4,10 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
-import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { materialDark } from "react-syntax-highlighter/dist/esm/styles/prism";
+// import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+// import { materialDark } from "react-syntax-highlighter/dist/esm/styles/prism";
+
+
 
 import Input from "@/components/Input";
 import SideBar from "@/components/SideBar";
@@ -93,29 +95,23 @@ const createNewThread = async () => {
             >
               {msg.role === "assistant" ? (
                 <ReactMarkdown
-                  remarkPlugins={[remarkGfm]}
-                  components={{
-                    code({ node, inline, className, children, ...props }) {
-                      const match = /language-(\w+)/.exec(className || "");
-                      return !inline && match ? (
-                        <SyntaxHighlighter
-                          style={materialDark}
-                          language={match[1]}
-                          PreTag="div"
-                          {...props}
-                        >
-                          {String(children).replace(/\n$/, "")}
-                        </SyntaxHighlighter>
-                      ) : (
-                        <code className={className} {...props}>
-                          {children}
-                        </code>
-                      );
-                    },
-                  }}
-                >
-                  {msg.content}
-                </ReactMarkdown>
+  remarkPlugins={[remarkGfm]}
+  components={{
+    code({ className, children, ...props }) {
+      return (
+        <code
+          className={`block bg-black/40 text-green-300 p-3 rounded-md overflow-x-auto ${className ?? ""}`}
+          {...props}
+        >
+          {children}
+        </code>
+      );
+    },
+  }}
+>
+  {msg.content}
+</ReactMarkdown>
+
               ) : (
                 msg.content
               )}
