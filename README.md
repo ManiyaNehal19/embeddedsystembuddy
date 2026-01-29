@@ -33,5 +33,3 @@ Access Embedded Systems Buddy here: (https://embeddedsystembuddy-nscz.vercel.app
 - **Deployment:** Vercel  
 
 ---
-git clone https://github.com/your-username/embedded-systems-buddy.git
-cd embedded-systems-buddy
