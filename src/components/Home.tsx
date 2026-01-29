@@ -4,11 +4,6 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
-// import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-// import { materialDark } from "react-syntax-highlighter/dist/esm/styles/prism";
-
-
-
 import Input from "@/components/Input";
 import SideBar from "@/components/SideBar";
 import { v4 as uuidv4 } from 'uuid';
@@ -39,7 +34,7 @@ const createNewThread = async () => {
 };
 
   useEffect(() => {
-    setThreadId(crypto.randomUUID());
+    setThreadId(uuidv4());
   }, []);
 
   const handleSelectThread = async (id: string) => {
